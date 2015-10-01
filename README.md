@@ -32,6 +32,21 @@ or alternatively:
       verbose     => false,
     }
 ```
+
+download from an array of URLs
+```puppet
+
+  $manyfiles = [
+    'http://mywebsite.com/apples',
+    'http://mywebsite.com/oranges',
+    'http://mywebsite.com/bananas',
+  ]
+
+  wget::fetch { $manyfiles:
+    destination_dir => '/downloads/',
+  }
+```
+
 This fetches a document which requires authentication:
 
 ```puppet
